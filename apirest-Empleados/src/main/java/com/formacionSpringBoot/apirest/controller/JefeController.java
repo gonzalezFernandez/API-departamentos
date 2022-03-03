@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.formacionSpringBoot.apirest.entity.Jefe;
 import com.formacionSpringBoot.apirest.service.JefeService;
 
-
-
 @RestController
 @RequestMapping("/api")
 public class JefeController {
@@ -36,7 +34,7 @@ public class JefeController {
 	}
 	
 	@GetMapping("jefes/{idJefe}")
-	public ResponseEntity<?>  findEmpleadoById(@PathVariable Long idJefe) {
+	public ResponseEntity<?>  findJefeById(@PathVariable Long idJefe) {
 		Jefe jefe = null;
 		Map<String, Object> response=new HashMap<>();
 		
@@ -59,7 +57,7 @@ public class JefeController {
 	
 	@PostMapping("/jefe")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<?> saveEmpleado(@RequestBody Jefe jefe) {
+	public ResponseEntity<?> saveJefe(@RequestBody Jefe jefe) {
 		Map<String, Object> response = new HashMap<>();
 
 		try {
@@ -80,7 +78,7 @@ public class JefeController {
 	
 	@PutMapping("/jefe/{idJefe}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<?> upDateEmpleado(@RequestBody Jefe jefe, @PathVariable Long idJefe) {
+	public ResponseEntity<?> upDateJefe(@RequestBody Jefe jefe, @PathVariable Long idJefe) {
 
 		Jefe jefeActual = servicio.findById(idJefe);
 
